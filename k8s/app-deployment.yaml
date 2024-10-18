@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: turfbookingapp-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: turfbookingapp
+  template:
+    metadata:
+      labels:
+        app: turfbookingapp
+    spec:
+      containers:
+        - name: turfbookingapp
+          image: malhar0504/turf-app:v2
+          env:
+            - name: DB_NAME
+              value: turf_db
+            - name: DB_USER
+              value: root
+            - name: DB_PASSWORD
+              value: malhar
+            - name: DB_HOST
+              value: mysql-service
+            - name: DB_PORT
+              value: "3306"
+          ports:
+            - containerPort: 8000
+
