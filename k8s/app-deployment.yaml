@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: turfbookingapp
-          image: malhar0504/turf-app:v1
+          image: malhar0504/turf-app:v5
           env:
             - name: DB_NAME
               value: turf_db
