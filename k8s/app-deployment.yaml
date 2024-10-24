@@ -27,7 +27,7 @@ spec:
             - name: DB_PORT
               value: "3306"
             - name: APP_HOST_URL
-              value: "LOAD_BALANCER_DNS_PLACEHOLDER"  
+              value: "http://a447657df2c774f41b6be74e75f317bd-499462746.us-east-1.elb.amazonaws.com"  
           ports:
             - containerPort: 8000
 
