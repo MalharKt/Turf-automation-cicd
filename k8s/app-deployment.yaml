@@ -27,7 +27,7 @@ spec:
             - name: DB_PORT
               value: "3306"
             - name: APP_HOST_URL
-              value: "http://LOAD_BALANCER_DNS_PLACEHOLDER"  
+              value: "LOAD_BALANCER_DNS_PLACEHOLDER"  
           ports:
             - containerPort: 8000
 
