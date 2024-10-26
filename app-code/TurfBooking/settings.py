@@ -26,10 +26,13 @@ SECRET_KEY = 'django-insecure-nb&69m&j$g+yr&jlha714^6o2e9yqg@a!f8917pr@9g4o*mvyn
 DEBUG = True
 
 # Read LoadBalancer DNS from environment variable
+
+# Read LoadBalancer DNS from environment variable
 load_balancer_dns = os.getenv('LOAD_BALANCER_DNS', 'localhost')
 
 # Set ALLOWED_HOSTS dynamically
 ALLOWED_HOSTS = [load_balancer_dns, '127.0.0.1']
+
 
 # Set APP_HOST_URL dynamically
 APP_HOST_URL = os.getenv('APP_HOST_URL', f'http://{load_balancer_dns}')
