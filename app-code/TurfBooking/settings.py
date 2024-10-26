@@ -31,7 +31,7 @@ DEBUG = True
 load_balancer_dns = os.getenv('LOAD_BALANCER_DNS', 'localhost')
 
 # Set ALLOWED_HOSTS dynamically
-ALLOWED_HOSTS = [load_balancer_dns, '127.0.0.1']
+ALLOWED_HOSTS = [load_balancer_dns, 'ae20d32d35bc640579b0f598c72ce9b9-661453539.us-east-1.elb.amazonaws.com', '127.0.0.1']
 
 
 
