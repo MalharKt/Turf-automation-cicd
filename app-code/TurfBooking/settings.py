@@ -23,18 +23,22 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = 'django-insecure-nb&69m&j$g+yr&jlha714^6o2e9yqg@a!f8917pr@9g4o*mvyn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 # Read LoadBalancer DNS from environment variable
 
 # Read LoadBalancer DNS from environment variable
-ALLOWED_HOSTS = [os.getenv('LOAD_BALANCER_DNS', '127.0.0.1'), '127.0.0.1']
+# Load Balancer DNS from environment variable
+load_balancer_dns = os.getenv('LOAD_BALANCER_DNS', 'localhost')
 
+# Set ALLOWED_HOSTS dynamically
+ALLOWED_HOSTS = [load_balancer_dns, '127.0.0.1']
 
+# Read APP_HOST_URL from environment variable
+APP_HOST_URL = os.getenv('APP_HOST_URL', f'http://{load_balancer_dns}')
 
 
 # Application definition
-
 INSTALLED_APPS = [
     'django.contrib.admin',
     'django.contrib.auth',
